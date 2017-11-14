@@ -3,6 +3,5 @@ defmodule ExotelExTest do
   doctest ExotelEx
 
   test "greets the world" do
-    assert ExotelEx.hello() == :world
   end
 end
