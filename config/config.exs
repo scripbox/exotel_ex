@@ -30,4 +30,6 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 config :exotel_ex,
   sid: System.get_env("EXOTEL_SID"),
-  token: System.get_env("EXOTEL_TOKEN")
+  token: System.get_env("EXOTEL_TOKEN"),
+  rate_limit_scale: System.get_env("EXOTEL_RATE_LIMIT_SCALE"), # in milli seconds
+  rate_limit_count: System.get_env("EXOTEL_RATE_LIMIT_COUNT")

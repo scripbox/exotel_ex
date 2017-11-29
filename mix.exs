@@ -26,7 +26,8 @@ defmodule ExotelEx.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.13.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:ex_rated, "~> 1.2"}
     ]
   end
 

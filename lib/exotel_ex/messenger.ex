@@ -7,4 +7,5 @@ defmodule ExotelEx.Messenger do
 
   @callback send_sms(from :: String.t, to :: String.t, body :: String.t) :: map
   @callback sms_details(sms_sid :: String.t) :: map
+  @callback time_to_next_bucket() :: tuple
 end

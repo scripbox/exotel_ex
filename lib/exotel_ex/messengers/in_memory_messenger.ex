@@ -83,8 +83,8 @@ defmodule ExotelEx.InMemoryMessenger do
         "DateCreated" => "2017-11-12 00:24:31",
         "DateSent" => nil,
         "DateUpdated" => "2017-11-12 00:24:31",
-        "DetailedStatus" => "PENDING_TO_OPERATOR",
-        "DetailedStatusCode" => 21010,
+        "DetailedStatus" => "DELIVERED_TO_HANDSET",
+        "DetailedStatusCode" => 20005,
         "Direction" => "outbound-api",
         "From" => "01139595093/SCRPBX",
         "Price" => nil,
@@ -94,5 +94,18 @@ defmodule ExotelEx.InMemoryMessenger do
         "Uri" => "/v1/Accounts/probe/SMS/Messages/#{sms_sid}.json"
       }
     }
+  end
+
+  @doc """
+  The time_to_next_bucket/0 function gets the time in ms to next bucket limit.
+  ## Example:
+      ```
+      iex(1)> ExotelEx.Messenger.InMemoryMessenger.time_to_next_bucket
+      {:ok, 500} # 500 ms to next bucket reset
+      ```
+  """
+  @spec time_to_next_bucket() :: tuple()
+  def time_to_next_bucket do
+    {:ok, 0}
   end
 end
