@@ -108,11 +108,13 @@ defmodule ExotelEx.HttpMessenger do
   end
 
   defp time_scale_in_ms do
-    Application.get_env(:exotel_ex, :rate_limit_scale)
+    {time_scale, _} = Integer.parse(Application.get_env(:exotel_ex, :rate_limit_scale))
+    time_scale
   end
 
   defp api_limit do
-    Application.get_env(:exotel_ex, :rate_limit_count)
+    {api_limit_rate, _} = Integer.parse(Application.get_env(:exotel_ex, :rate_limit_count))
+    api_limit_rate
   end
 
   defp send_sms_url do
